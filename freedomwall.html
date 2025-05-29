@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Freedom Wall</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="freedomwall.css" />
+</head>
+<body class="text-gray-900 dark:text-white min-h-screen relative">
+  <div id="welcomeOverlay">
+    <div>
+      <h1>Welcome to Freedom Wall</h1>
+      <p>You have the freedom to say anything to someone.</p>
+    </div>
+  </div>
+
+  <div id="particles"></div>
+
+  <div class="container mx-auto px-4 py-10 relative z-10" style="display:none;" id="mainContent">
+    <div class="flex justify-between items-center mb-6">
+      <h1 class="text-4xl font-extrabold tracking-wide">🌸 Freedom Wall</h1>
+      <button id="toggleTheme" class="bg-gray-800 text-white px-4 py-2 rounded transition-colors duration-300">Dark Mode</button>
+    </div>
+
+    <!-- Updated: Added id sendMessage, removed bg-white and dark:bg-gray-900 -->
+    <div id="sendMessage" class="p-6 rounded-lg shadow-md mb-10 gradient-border">
+      <h2 class="text-2xl font-semibold mb-4">Send a Message</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div>
+          <label class="block text-lg mb-1">Recipient's Name:</label>
+          <!-- Removed bg-gray-700 and text-black classes -->
+          <input type="text" id="toInput" class="w-full p-2 border rounded" placeholder="e.g. Ayana" />
+        </div>
+        <div>
+          <label class="block text-lg mb-1">Search a song (optional):</label>
+          <input type="text" id="searchInput" class="w-full p-2 border rounded" placeholder="Type song or artist name" autocomplete="off" />
+          <div id="searchResults" class="bg-white dark:bg-gray-700 max-h-48 overflow-y-auto rounded mt-1 shadow-md"></div>
+        </div>
+      </div>
+
+      <label class="block text-lg mt-4 mb-1">Message:</label>
+      <textarea id="messageInput" rows="3" class="w-full p-2 border rounded" placeholder="Type your message here (optional)"></textarea>
+      <button id="submitBtn" class="mt-4 px-6 py-2 rounded hover:bg-blue-700 transition-colors duration-300">Submit</button>
+    </div>
+
+    <h2 class="text-2xl font-semibold mb-4">🔍 Search Messages by Recipient</h2>
+    <input type="text" id="filterInput" placeholder="Search by recipient's name..." />
+
+    <h2 class="text-2xl font-semibold mb-4">📝 Wall of Messages</h2>
+    <div id="wall" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6"></div>
+  </div>
+
+  <script src="freedomwall.js"></script>
+</body>
+</html>
