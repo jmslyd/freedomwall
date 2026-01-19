@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Freedom Wall</title>
+  
+  <link rel="stylesheet" href="style.css" />
+  
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+<body>
+
+  <div id="welcomeOverlay">
+    <div class="welcome-content">
+      <h1>Freedom Wall</h1>
+      <p>A safe space for your unspoken thoughts.</p>
+      <button onclick="enterSite()">Enter Space</button>
+    </div>
+  </div>
+
+  <div id="particles"></div>
+
+  <div class="container mx-auto px-4 py-8 relative z-10 max-w-[1400px]">
+    
+    <div class="flex justify-between items-end mb-8 px-4">
+      <div>
+        <h1 class="brand-title">Freedom Wall</h1>
+        <p class="brand-subtitle">Express. Release. Let go.</p>
+      </div>
+      <button id="toggleTheme" class="theme-btn">
+        <i class="fas fa-moon"></i> <span>Dark</span>
+      </button>
+    </div>
+
+    <div class="main-card">
+      <div class="card-header">
+        <i class="fas fa-pen-nib"></i> Write a Note
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+        <div class="input-group">
+          <label>To Someone</label>
+          <input type="text" id="toInput" placeholder="e.g. My Best Friend" />
+        </div>
+        <div class="input-group relative">
+          <label>Attach Song</label>
+          <input type="text" id="searchInput" placeholder="Search song..." autocomplete="off" />
+          <div id="searchResults" class="search-dropdown hidden"></div>
+        </div>
+      </div>
+
+      <div class="input-group mb-4">
+        <label>Your Message</label>
+        <textarea id="messageInput" rows="5" placeholder="What's on your mind?"></textarea>
+      </div>
+
+      <div class="card-footer">
+        <div class="mood-section">
+          <span class="mood-label">Vibe Check:</span>
+          <div class="mood-options">
+            
+            <label class="mood-item">
+              <input type="radio" name="mood" value="purple" checked>
+              <span class="dot purple"></span>
+              <span class="name">Chill</span>
+            </label>
+
+            <label class="mood-item">
+              <input type="radio" name="mood" value="pink">
+              <span class="dot pink"></span>
+              <span class="name">Love</span>
+            </label>
+
+            <label class="mood-item">
+              <input type="radio" name="mood" value="blue">
+              <span class="dot blue"></span>
+              <span class="name">Sad</span>
+            </label>
+
+            <label class="mood-item">
+              <input type="radio" name="mood" value="yellow">
+              <span class="dot yellow"></span>
+              <span class="name">Happy</span>
+            </label>
+
+          </div>
+        </div>
+
+        <button id="submitBtn" class="post-btn">
+          Post Note <i class="fas fa-paper-plane ml-2"></i>
+        </button>
+      </div>
+    </div>
+
+    <div class="search-bar-container">
+      <i class="fas fa-search"></i>
+      <input type="text" id="filterInput" placeholder="Find a message..." />
+    </div>
+
+    <div id="wall" class="wall-grid">
+      </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
